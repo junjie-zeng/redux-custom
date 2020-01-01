@@ -86,3 +86,25 @@ export function combineReducers2(reducers){
     }
     
 }
+
+
+
+/*
+    -- 对redux的理解
+
+        -- 页面刷新加载 reducers.js,该js用于产生多个 reducer，加载 combineReducers 函数，并将当前的子reducer当做对象传递过去
+        -- combineReducers 函数接收到参数，函数运行，（返回一个匿名函数并产生了一个闭包）。
+        -- 接着执行 store.js, createStore 函数，该函数接收一个参数是 reducer （combineReducers 函数返回过来的匿名函数）
+        -- createStore 函数执行
+           - 首先定义了一个内部的state与用于存放监听函数的数组
+           - 给state赋值，需先执行combineReducers 函数返回过来的匿名函数，传入state，与action对象
+           - 进入combineReducers匿名函数，定义保存所有新状态的容器对象newState,拿到reducers（是一个对象，有很多的子reducer），通过Object.keys拿到key放到数组中
+           - 对keys进行遍历，在遍历过程中用一个变量接收子reducer与子state，执行子reducer，并传入state与action，根据传递的state与action对象返回新的stae,最后将新的状态存放在newState中并返回
+        -- 接着继续加载createStore函数，该函数最后返回了三个方法 getState,dispatch,subscribe
+           - getState 用于拿到当前的状态，
+           - dispatch 接收action对象，并传入reducer 更新老的状态得到最新的状态（所以状态发生了改变页面也就刷新了）
+           - subscribe 是一个状态的监听器，当状态发生了改变也就会重新调用监听函数来更新页面中的数据
+
+
+
+*/
