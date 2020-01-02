@@ -1,7 +1,7 @@
 // 公共 redux
  // import { combineReducers } from 'redux' 
 // 自定义的redux
-import { combineReducers } from '../libs/redux'
+import { combineReducers,combineReducers2 } from '../libs/redux'
 
 import {INCREMENT,DECREMENT,ADD_MSG} from './action-types';
 
@@ -36,7 +36,7 @@ function msgs (state = initMsgs,action){
     }
 }
 
-export default combineReducers({
+export default combineReducers2({
     count,
     msgs
 
