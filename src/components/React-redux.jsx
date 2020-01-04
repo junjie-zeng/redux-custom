@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
+import { connect } from '../libs/react-redux';
 import {increment,decrement,addMsg } from '../redux/action';
 
 class ReactRedux extends Component{

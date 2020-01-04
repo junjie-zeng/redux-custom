@@ -9,8 +9,10 @@ import NotRedux from './components/Not-redux';
 import ISRedux from './components/Is-redux';
 // react-redux版本
 import ReactRedux from './components/React-redux';
+//import {Provider} from 'react-redux'
+import {Provider} from './libs/react-redux'
 
-import {Provider} from 'react-redux'
+
 // store
 import store from './redux/store'
 

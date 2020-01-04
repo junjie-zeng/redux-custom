@@ -1,8 +1,7 @@
-// 公共 redux
- // import { combineReducers } from 'redux' 
-// 自定义的redux
-import { combineReducers,combineReducers2 } from '../libs/redux'
-
+// redux
+// import { combineReducers } from 'redux'  // 公共 redux
+import { combineReducers,combineReducers2 } from '../libs/redux' // 自定义的redux
+// action-types
 import {INCREMENT,DECREMENT,ADD_MSG} from './action-types';
 
 // 初始state
